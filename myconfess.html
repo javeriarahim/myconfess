@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Confession Page</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #fceefc;
+      text-align: center;
+    }
+
+    /* First screen */
+    #confessScreen {
+      display: block;
+      padding: 100px;
+    }
+
+    #confessScreen button {
+      background-color: #ff6f91;
+      color: white;
+      border: none;
+      padding: 15px 30px;
+      font-size: 18px;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    #confessScreen button:hover {
+      background-color: #ff4d73;
+    }
+
+    /* Second screen */
+    #messageScreen {
+      display: none;
+      height: 100vh;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    .message {
+      font-size: 28px;
+      color: #ff4d73;
+      animation: pop 1s ease-in-out infinite alternate;
+    }
+
+    @keyframes pop {
+      from { transform: scale(1); }
+      to { transform: scale(1.1); }
+    }
+
+    .emoji {
+      font-size: 50px;
+      margin-top: 20px;
+      animation: bounce 1s infinite;
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- First Screen -->
+  <div id="confessScreen">
+    <h1>Welcome 💕</h1>
+    <button onclick="showMessage()">Confess</button>
+  </div>
+
+  <!-- Second Screen -->
+  <div id="messageScreen">
+    <div class="message">I Like You So Much 💖</div>
+    <div class="emoji">🌸✨😍</div>
+  </div>
+
+  <script>
+    function showMessage() {
+      document.getElementById("confessScreen").style.display = "none";
+      document.getElementById("messageScreen").style.display = "flex";
+    }
+  </script>
+
+</body>
+</html>
